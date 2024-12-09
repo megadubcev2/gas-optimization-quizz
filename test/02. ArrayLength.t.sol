@@ -6,6 +6,7 @@ import "src/02. ArrayLength.sol";
 
 // forge test --match-contract ArrayLength
 // forge test --match-contract ArrayLength --gas-report
+
 contract ArrayLengthsTest is Test {
     ArrayLength arrayLength;
 
@@ -19,5 +20,13 @@ contract ArrayLengthsTest is Test {
 }
 
 contract ArrayLengthOptimizedTest is Test {
-/* YOUR SOLUTION GOES HERE */
+    ArrayLengthOptimized arrayLengthOptimized;
+
+    function setUp() public {
+        arrayLengthOptimized = new ArrayLengthOptimized();
+    }
+
+    function test_Call() public view {
+        arrayLengthOptimized.callFor();
+    }
 }

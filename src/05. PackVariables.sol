@@ -24,9 +24,29 @@ contract PackVariables is IPackVariables {
 }
 
 contract PackVariablesOptimized is IPackVariables {
-    /* YOUR SOLUTION GOES HERE */
+    // Оптимизированное расположение переменных
+    uint8 one;           // 1 байт
+    uint8 six;           // 1 байт
+    bytes14 five;        // 14 байтов
+    uint256 two;         // 32 байта
+    bytes18 three;       // 18 байтов
+    uint8[30] four;      // 30 байтов
 
-    function setValues(uint8 _one, uint256 _two, bytes18 _three, uint8[30] calldata _four, bytes14 _five, uint8 _six)
-        public
-    {}
+    function setValues(
+        uint8 _one,
+        uint256 _two,
+        bytes18 _three,
+        uint8[30] calldata _four,
+        bytes14 _five,
+        uint8 _six
+    ) public {
+        one = _one;       // 1 байт
+        six = _six;       // 1 байт
+        five = _five;     // 14 байтов
+        two = _two;       // 32 байта
+        three = _three;   // 18 байтов
+        for (uint256 i = 0; i < 30; i++) {
+            four[i] = _four[i];  // Копируем 30 байтов массива
+        }
+    }
 }

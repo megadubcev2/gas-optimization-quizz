@@ -29,28 +29,35 @@ contract Division is IDivision {
     }
 }
 
-contract AdditionOptimized is IAddition {
+contract AdditionOptimized {
     uint256 number = 1;
 
     function addition(uint256 value) public {
-        /* YOUR SOLUTION GOES HERE */
+            number += value;
     }
 }
 
-contract SubtractionOptimized is ISubtraction {
+
+contract SubtractionOptimized {
     uint256 number = 100;
 
     function subtraction(uint256 value) public {
-        /* YOUR SOLUTION GOES HERE */
+
+            number -= value;
+
     }
 }
 
-contract DivisionOptimized is IDivision {
+
+contract DivisionOptimized {
     function divisionBy2(uint256 number) public pure returns (uint256) {
-        /* YOUR SOLUTION GOES HERE */
+        // Используем побитовый сдвиг для деления на 2
+        return number >> 1;
     }
 
     function divisionBy128(uint256 number) public pure returns (uint256) {
-        /* YOUR SOLUTION GOES HERE */
+        // Используем побитовый сдвиг для деления на 128
+        return number >> 7;  // эквивалентно number / 128
     }
 }
+

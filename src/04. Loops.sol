@@ -31,16 +31,17 @@ contract Loops is ILoops {
     }
 }
 
-contract LoopsOptimized is ILoops {
-    function loopFor() public pure {
-        /* YOUR SOLUTION GOES HERE */
-    }
+contract LoopsOptimized {
+  function loopFor() public pure returns (uint256) {
+   // просто математически считаем сумму или можем сразу вернуть посчитанный ответ
+   return 20 * (20 - 1) >> 1;
+  }
 
-    function loopWhile() public pure {
-        /* YOUR SOLUTION GOES HERE */
-    }
+  function loopWhile() public pure returns (uint256) {
+   return 10 * (10 - 1) >> 1;
+  }
 
-    function loopDoWhile() public pure {
-        /* YOUR SOLUTION GOES HERE */
-    }
+  function loopDoWhile() public pure returns (uint256) {
+   return 10 * (10 - 1) >> 1;
+  }
 }

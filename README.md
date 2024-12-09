@@ -1,3 +1,6 @@
+решено 1-7, 9
+
+
 # Gas optimization quizz
 
 Homework for students on the topic of gas optimization.
